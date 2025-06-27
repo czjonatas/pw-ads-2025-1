@@ -4,6 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import InfoIcon from "@mui/icons-material/Info";
 
 export default function MainMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -60,6 +61,17 @@ export default function MainMenu() {
 
         <MenuItem onClick={handleClose} component={Link} to="/cars/new">
           Cadastro de veículos
+        </MenuItem>
+
+        {/* Novo item para a página Sobre */}
+        <MenuItem
+          onClick={handleClose}
+          component={Link}
+          to="/sobre"
+          sx={{ mt: 1, borderTop: "1px solid rgba(0,0,0,0.12)" }}
+        >
+          <InfoIcon sx={{ mr: 1.5, fontSize: "1.2rem" }} />
+          Sobre o Projeto
         </MenuItem>
       </Menu>
     </div>
